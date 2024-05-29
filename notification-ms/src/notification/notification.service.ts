@@ -12,7 +12,7 @@ export class NotificationService {
   ) {}
 
   public async newUserNotification(user: CreateUserDto) {
-    const twentyFourHours = 24 * 60 * 60 * 1000; //24 * 60 * 60 * 1000;
+    const twentyFourHours = 24 * 60 * 60 * 1000; // 24h
     await this.queue.add(
       USER_NOTIFICATION.PROCESSES.USER_CREATED_NOTIFICATION,
       user,
